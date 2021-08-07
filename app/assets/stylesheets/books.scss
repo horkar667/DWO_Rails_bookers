@@ -1,0 +1,53 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .show_btn {
+//   color: #666;
+// }
+
+.index_form{
+  margin-top: 10px;
+}
+
+th {
+  text-align: center;
+}
+
+td {
+    padding-bottom: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.edit_form {
+  margin-bottom: 10px;
+}
+
+.message_color {
+  color: #008000;
+}
+
+.alert {
+  width: 450px;
+  border: 2px solid red;
+  background-color: #f0f0f0;
+  padding: 7px 7px 0 7px;
+  margin-bottom: 20px;
+}
+
+.alert_message {
+  font-size: 12px;
+  color: #fff;
+  background-color: #c00;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  margin: -7px -7px 0 -7px;
+}
+
+ul {
+  margin: 33px;
+}
+
+li {
+  font-size: 12px;
+}
