@@ -1,40 +1,40 @@
 class BooksController < ApplicationController
   def index
-    @bookers = Booker.all
-    @booker = Booker.new
+    @books = Book.all
+    @book = Book.new
   end
 
   def show
-    @booker = Booker.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def edit
-    @booker = Booker.find(params[:id])
+    @book = Book.find(params[:id])
   end
-  
+
   def update
-    @booker = Booker.find(params[:id])
-    if @booker.update(booker_params)
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
       flash[:success]="Book was successfully updated."
-      redirect_to "/books/#{@booker.id}"
+      redirect_to book_path(@book.id)
     else
       render :edit
     end
   end
 
   def create
-    @booker = Booker.new(booker_params)
-    if @booker.save
-      redirect_to "/books/#{@booker.id}"
+    @book = Book.new(book_params)
+    if @book.save
+      redirect_to book_path(@book)
       flash[:success]="Book was successfully created."
     else
-      @bookers= Booker.all
+      @books = Book.all
       render :index
     end
   end
 
   def destroy
-    booker = Booker.find(params[:id])
+    booker = Book.find(params[:id])
     booker.destroy
     flash[:success] = "Book was successfully destroyed."
     redirect_to "/books"
@@ -42,7 +42,7 @@ class BooksController < ApplicationController
 
 
   private
-  def booker_params
-    params.require(:booker).permit(:title, :body)
+  def book_params
+    params.require(:book).permit(:title, :body)
   end
 end

@@ -1,7 +1,7 @@
  <% flash.each do |message_type, message| %>
       <p class ="message_color"><%= message %></p>
  <% end %>
-<p><strong>Title:</strong> <%= @booker.title %></p>
-<p><strong>Body:</strong> <%= @booker.body %></p>
+<p><strong>Title:</strong> <%= @book.title %></p>
+<p><strong>Body:</strong> <%= @book.body %></p>
 
 <a class="show_btn" href="/books/<%= params[:id] %>/edit">Edit</a> | <a class="show_btn" href ="/books">Back</a>

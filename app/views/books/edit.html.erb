@@ -1,34 +1,34 @@
 <h1>Editing Book</h1>
-<% if @booker.errors.any? %>
+<% if @book.errors.any? %>
   <div class="alert">
     <div class="alert_message">
-      <%if @booker.errors.count == 1 %>
+      <%if @book.errors.count == 1 %>
       1 error prohibited this book from being saved:
       <% else %>
       2 errors prohibited this book from being saved:
       <% end %>
     </div>
     <ul>
-      <% @booker.errors.full_messages.each do |message| %>
+      <% @book.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
   </div>
-<%= form_with model:@booker, url:"/books/#{@booker.id}", local:true do |f| %>
-<div>Title</div>
-<%= f.text_field :title, value: @booker.title %>
-<div class="index_form">Body</div>
-<%= f.text_area :body, value: @booker.body %>
-<div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
-<% end %>
-<a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
+  <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
+    <div>Title</div>
+    <%= f.text_field :title, value: @book.title %>
+    <div class="index_form">Body</div>
+    <%= f.text_area :body, value: @book.body %>
+    <div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
+  <% end %>
+  <a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
 <% else %>
-<%= form_with model:@booker, url:"/books/#{@booker.id}", local:true do |f| %>
-<div>Title</div>
-<%= f.text_field :title, value: @booker.title %>
-<div class="index_form">Body</div>
-<%= f.text_area :body, value: @booker.body %>
-<div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
-<% end %>
-<a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
+  <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
+    <div>Title</div>
+    <%= f.text_field :title, value: @book.title %>
+    <div class="index_form">Body</div>
+    <%= f.text_area :body, value: @book.body %>
+    <div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
+  <% end %>
+  <a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
 <% end %>
