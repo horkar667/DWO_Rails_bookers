@@ -21,7 +21,6 @@
     <%= f.text_area :body, value: @book.body %>
     <div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
   <% end %>
-  <a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
 <% else %>
   <%= form_with model:@book, url:"/books/#{@book.id}", local:true do |f| %>
     <div>Title</div>
@@ -30,5 +29,5 @@
     <%= f.text_area :body, value: @book.body %>
     <div class="index_form edit_form"><%= f.submit 'Update Book' %></div>
   <% end %>
-  <a class="edit_btn" href="/books/<%= params[:id] %>">Show</a> | <a class="edit_btn" href ="/books">Back</a>
 <% end %>
+<%= link_to "Show", book_path(params[:id]), class: "edit_btn" %> | <%= link_to "Back","/books", class: "edit_btn" %>

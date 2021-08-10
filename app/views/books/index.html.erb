@@ -27,11 +27,7 @@
 <% if @book.errors.any? %>
   <div class="alert">
     <div class="alert_message">
-      <%if @book.errors.count == 1 %>
-      1 error prohibited this book from being saved:
-      <% else %>
-      2 errors prohibited this book from being saved:
-      <% end %>
+      <%= @book.errors.count %> errors prohibited this book from being saved:
     </div>
     <ul>
       <% @book.errors.full_messages.each do |message| %>
